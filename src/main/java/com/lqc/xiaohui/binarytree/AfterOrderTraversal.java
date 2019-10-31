@@ -1,4 +1,4 @@
-package com.lqc.xiaohui.erchashu;
+package com.lqc.xiaohui.binarytree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
