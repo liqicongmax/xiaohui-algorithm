@@ -28,6 +28,9 @@ public class HeapSort {
         for(int i=(arr.length-2)/2;i>=0;i--){
             maxAdjust(arr,i,arr.length);
         }
+//        for(int i=0;i<=(arr.length-2)/2;i++){
+//            maxAdjust(arr,i,arr.length);
+//        }
         for(int i=arr.length-1;i>=0;i--){
             int temp=arr[0];
             arr[0]=arr[i];
@@ -37,7 +40,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args){
-        int[] arr={5,3,2,1,4};
+        int[] arr={5,3,2,4,1,6};
         new HeapSort().maxHeapSort(arr);
         System.out.println(Arrays.toString(arr));
     }
