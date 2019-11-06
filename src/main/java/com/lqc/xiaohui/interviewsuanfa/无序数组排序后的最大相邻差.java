@@ -57,7 +57,7 @@ public class 无序数组排序后的最大相邻差 {
      * @return
      */
     private static int solution2(int[] nums) {
-        if(nums.length<2){
+        if (nums.length < 2) {
             return 0;
         }
         int max = nums[0];
@@ -75,22 +75,23 @@ public class 无序数组排序后的最大相邻差 {
             return 0;
         }
         // 计算桶个数
-        int bucketSize = (Math.max(1,d / (nums.length - 1)));
+        int bucketSize = Math.max(1, d / (nums.length - 1));
         int bucketNum = (max - min) / bucketSize + 1;
         // 创建桶组
         Bucket[] buckets = new Bucket[bucketNum];
         // 放数据
         for (int i = 0; i < nums.length; ++i) {
-            int bucketIndex = (nums[i]-min)/bucketSize;
-            if(buckets[bucketIndex]==null){
-                buckets[bucketIndex]=new Bucket();
+            int bucketIndex = (nums[i] - min) / bucketSize;
+            if (buckets[bucketIndex] == null) {
+                buckets[bucketIndex] = new Bucket();
             }
-            buckets[bucketIndex].max=Math.max(nums[i],buckets[bucketIndex].max);
-            buckets[bucketIndex].min=Math.min(nums[i],buckets[bucketIndex].min);
+            buckets[bucketIndex].max = Math.max(nums[i], buckets[bucketIndex].max);
+            buckets[bucketIndex].min = Math.min(nums[i], buckets[bucketIndex].min);
         }
-        int previousMax = buckets[0].max; int maxGap = Integer.MIN_VALUE;
+        int previousMax = buckets[0].max;
+        int maxGap = Integer.MIN_VALUE;
         for (int i = 1; i < buckets.length; i++) {
-            if (buckets[i] != null ) {
+            if (buckets[i] != null) {
                 maxGap = Math.max(maxGap, buckets[i].min - previousMax);
                 previousMax = buckets[i].max;
             }
@@ -98,8 +99,9 @@ public class 无序数组排序后的最大相邻差 {
         }
         return maxGap;
     }
-    public static void main(String[] args){
-        int[] nums={1,1,1,1,1,5,5,5,5,5};
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 1, 1, 5, 5, 5, 5, 5};
         System.out.println(solution2(nums));
     }
 }
