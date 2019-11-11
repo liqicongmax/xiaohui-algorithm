@@ -41,7 +41,7 @@ public class 删去K个数字后的最小值 {
             return "0";
         }
         int newLength=num.length()-k;
-        char[] stack=new char[newLength];
+        char[] stack=new char[num.length()];
         int top=0;
         for(int i=0;i<num.length();i++){
             char c=num.charAt(i);
@@ -58,7 +58,7 @@ public class 删去K个数字后的最小值 {
         return offset==newLength?"0":new String(stack,offset,newLength-offset);
     }
     public static void main(String[] args){
-        System.out.println(solution("12",2));
+        System.out.println(solution("10022",2));
 
     }
 }

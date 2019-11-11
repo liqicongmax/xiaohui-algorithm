@@ -33,10 +33,21 @@ public class MyLRUCache {
     public void put(String key,String value){
         Node node=hashMap.get(key);
         if(end!=null){
-
+            end.next=node;
+            node.pre=end;
+            node.next=null;
+        }else{
+            end=node;
+            if(head==null){
+                head=node;
+            }
         }
     }
 
+    /**
+     * todo
+     * @param node
+     */
     private void addNode(Node node){
 
     }
