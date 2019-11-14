@@ -1,5 +1,7 @@
 package com.lqc.xiaohui.interviewsuanfa;
 
+import java.util.Arrays;
+
 /**
  * @author liqicong@myhexin.com
  * @date 2019/11/6 13:25
@@ -52,13 +54,14 @@ public class 删去K个数字后的最小值 {
             stack[top++]=c;
         }
         int offset=0;
+        System.out.println(Arrays.toString(stack));
         while(offset<newLength&&stack[offset]=='0'){
             offset++;
         }
         return offset==newLength?"0":new String(stack,offset,newLength-offset);
     }
     public static void main(String[] args){
-        System.out.println(solution("10022",2));
+        System.out.println(solution("120022",1));
 
     }
 }

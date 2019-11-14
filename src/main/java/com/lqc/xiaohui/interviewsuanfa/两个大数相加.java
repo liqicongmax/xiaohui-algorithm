@@ -51,6 +51,6 @@ public class 两个大数相加 {
         return sb.toString();
     }
     public static void main(String[] args){
-        System.out.println(new 两个大数相加().add("21311","999"));
+        System.out.println(new 两个大数相加().add("21311","99911"));
     }
 }

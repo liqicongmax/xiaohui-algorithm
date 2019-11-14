@@ -10,7 +10,7 @@ public class GreatestCommonDivisor {
             return a;
         }
         if ((a & 1) == 0 && (b & 1) == 0) {
-            return getGreatestCommonDivisor(a, b) << 1;
+            return getGreatestCommonDivisor(a>>1, b>>1) << 1;
         } else if ((a & 1) == 0 && (b & 1) != 0) {
             return getGreatestCommonDivisor(a >> 1, b);
         } else if ((a & 1) != 0 && (b & 1) == 0) {
@@ -20,6 +20,9 @@ public class GreatestCommonDivisor {
             int min=a+b-max;
             return getGreatestCommonDivisor(max-min,min);
         }
+    }
 
+    public static void main(String[] args){
+        System.out.println(new GreatestCommonDivisor().getGreatestCommonDivisor(2,4));
     }
 }

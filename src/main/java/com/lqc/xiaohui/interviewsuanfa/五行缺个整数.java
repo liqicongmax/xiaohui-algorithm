@@ -30,7 +30,7 @@ public class 五行缺个整数 {
     }
 
     public static boolean checkNum(int num, int pos) {
-        return (num >> pos) == 1;
+        return ((num >> pos)&1) == 1;
     }
 
     //定位到两个数二进制表现下不一样的地方
